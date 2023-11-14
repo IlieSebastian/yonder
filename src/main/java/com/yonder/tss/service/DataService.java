@@ -2,7 +2,7 @@ package com.yonder.tss.service;
 
 import java.util.List;
 
-public interface DataService<RESPONSE> {
+public interface DataService<T> {
 
     /**
      * The method retrieves the data for a list of resource ids after validating them
@@ -10,5 +10,12 @@ public interface DataService<RESPONSE> {
      * @param resourceList - resource identifiers
      * @return a list containing the searched resources
      */
-    List<RESPONSE> getData(List<String> resourceList);
+    List<T> getData(List<String> resourceList);
+
+    /**
+     * The method stores the data within a CSV file
+     *
+     * @param data - data to be stored
+     */
+    void storeData(List<T> data);
 }

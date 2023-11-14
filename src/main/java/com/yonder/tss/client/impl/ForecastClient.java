@@ -7,11 +7,11 @@ import com.yonder.tss.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-@Service
+@Component
 public class ForecastClient implements Client<ForecastData> {
     private static final String RESOURCE_IDENTIFIER_PATH_VARIABLE = "{resourceIdentifier}";
     private final RestTemplate restTemplate;

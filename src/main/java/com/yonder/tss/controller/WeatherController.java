@@ -10,14 +10,18 @@ import java.util.List;
 
 @RestController("/weather")
 public class WeatherController {
-    private DataService<ForecastData> dataService;
+    private final DataService<ForecastData> dataService;
 
     public WeatherController(DataService<ForecastData> dataService) {
         this.dataService = dataService;
     }
 
     @GetMapping
-    public List<ForecastData> hello(@RequestParam(value = "cities", required = false) List<String> cities) {
-        return dataService.getData(cities);
+    public List<ForecastData> getForecastData(@RequestParam(value = "cities", required = false) List<String> cities) {
+        List<ForecastData> forecastData = dataService.getData(cities);
+        dataService.storeData(forecastData);
+        return forecastData;
     }
+
+
 }
