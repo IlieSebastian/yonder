@@ -1,12 +1,14 @@
 package com.yonder.tss.service;
 
-public interface DataService {
+import java.util.List;
+
+public interface DataService<RESPONSE> {
+
     /**
-     * The method retrieves the data for a resource identifier
+     * The method retrieves the data for a list of resource ids after validating them
      *
-     * @param resourceIdentifier - resource identifier
-     * @param <R>                - data type
-     * @return data containing the searched resource
+     * @param resourceList - resource identifiers
+     * @return a list containing the searched resources
      */
-    <R> R getData(String resourceIdentifier);
+    List<RESPONSE> getData(List<String> resourceList);
 }

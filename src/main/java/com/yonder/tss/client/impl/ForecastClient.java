@@ -17,7 +17,7 @@ public class ForecastClient implements Client<ForecastData> {
     private final RestTemplate restTemplate;
     private final String forecastServerUrl;
 
-    public ForecastClient(@Value("${forecast.server.url}") String forecastServerUrl) {
+    public ForecastClient(@Value("${forecast.server-url}") String forecastServerUrl) {
         this.forecastServerUrl = forecastServerUrl;
         this.restTemplate = new RestTemplateBuilder().rootUri(forecastServerUrl).build();
     }

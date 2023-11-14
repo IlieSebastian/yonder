@@ -1,18 +1,10 @@
 package com.yonder.tss.data;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
-
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class ForecastData extends ForecastBasicData {
+public class ForecastData {
     private String description;
-
+    private String wind;
+    private String temperature;
     private String name;
-
-    @JsonProperty("forecast")
-    private List<ForecastDailyData> dailyForecast;
 
     public String getDescription() {
         return description;
@@ -22,12 +14,20 @@ public class ForecastData extends ForecastBasicData {
         this.description = description;
     }
 
-    public List<ForecastDailyData> getDailyForecast() {
-        return dailyForecast;
+    public String getWind() {
+        return wind;
     }
 
-    public void setDailyForecast(List<ForecastDailyData> dailyForecast) {
-        this.dailyForecast = dailyForecast;
+    public void setWind(String wind) {
+        this.wind = wind;
+    }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
     }
 
     public String getName() {
